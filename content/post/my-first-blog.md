@@ -5,13 +5,5 @@ title = 'My First Blog'
 categories = ["通用技术"]
 tags = ["博客搭建", "Bilibili"]
 +++
-行内数学公式：$a^2 + b^2 = c^2$。
-块公式，
-$$
-a^2 + b^2 = c^2
-$$
-<div>
-$$
-\boldsymbol{x}_{i+1}+\boldsymbol{x}_{i+2}=\boldsymbol{x}_{i+3}
-$$
-</div>
+博客的第一天，像是推开了一一扇门，门外是寂静的狂野，但你知道：
+“这里将长出故事”
