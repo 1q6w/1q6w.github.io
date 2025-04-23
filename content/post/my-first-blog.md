@@ -1,6 +1,6 @@
 +++
 date = '2025-04-23T21:26:56+08:00'
-draft = true
+draft = false
 title = 'My First Blog'
 categories = ["通用技术"]
 tags = ["博客搭建", "Bilibili"]
