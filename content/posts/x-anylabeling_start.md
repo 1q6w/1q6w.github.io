@@ -124,3 +124,20 @@ classes:
 
 **3.4 加载模型进行标注**
 
+**3.5 导出YOLO格式的数据集**
+
+- 创建`.txt`配置文件
+
+    ~~~
+    blackball
+    blueball
+    bluetarget
+    redball
+    redtarget
+    yellowball
+    ~~~
+
+- 导入`.txt`配置文件
+
+- 选择目录导出文件
+

@@ -189,7 +189,7 @@ tags = ["YOLO docker 部署"]
     - 运行yolo CLI命令
 
       ~~~bash
-      yolo task=detect mode=train model=yolo11n.yaml data=/workspace/dataset/dataset1/data.yaml epochs=75 imgsz=640 workers=0
+      yolo task=detect mode=train model=yolo11n.yaml data=/workspace/dataset/dataset1/data.yaml project=/workspace/output name=train1 epochs=75 imgsz=640 workers=0 
       ~~~
 
     - 对于小模型避免过拟合，epochs应在50-100之间
@@ -213,7 +213,7 @@ tags = ["YOLO docker 部署"]
 - **导出ONNX模型**
 
   ~~~bash
-  yolo export model=yolov11n.pt format=onnx imgsz=320,224 dynamic=False opset=17 simplify=True name=yolov11n
+  yolo export model=yolov11n.pt format=onnx imgsz=640,640 dynamic=False opset=17 simplify=True name=yolov11n
   ~~~
 
 - ****
