@@ -1,7 +1,9 @@
 +++
 date = '2025-04-29T16:34:29+08:00'
 draft = false
-title = 'Deploy_yolo'
+title = 'yolo deploy'
+categories = ["计算机视觉"]
+tags = ["YOLO docker 部署"]
 +++
 # 使用 Docker 容器训练YOLO部署到MaixCam
 
