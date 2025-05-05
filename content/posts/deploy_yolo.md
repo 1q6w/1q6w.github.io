@@ -213,7 +213,8 @@ tags = ["YOLO docker 部署"]
 - **导出ONNX模型**
 
   ~~~bash
-  yolo export model=yolov11n.pt format=onnx imgsz=640,640 dynamic=False opset=17 simplify=True name=yolov11n
+  cd /workspace/weights/
+  yolo export model=best.pt format=onnx imgsz=640,640 dynamic=False opset=17 simplify=True name=yolov11n
   ~~~
 
 - ****
