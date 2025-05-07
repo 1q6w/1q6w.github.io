@@ -7,6 +7,8 @@ copyright: "[©2025 ahzhu's Blog](https://1q6w.github.io/)" # 网站的版权声
 theme: PaperMod # 主题
 languageCode: zh-cn # 语言
 
+
+
 enableInlineShortcodes: true # shortcode，类似于模板变量，可以在写 markdown 的时候便捷地插入，官方文档中有一个视频讲的很通俗
 hasCJKLanguage: true # 是否有 CJK 的字符
 enableRobotsTXT: true # 允许生成 robots.txt
@@ -51,7 +53,7 @@ languages:
 # 主题的配置(基本上是)
 # ~~~~~~~~~
 pagination:
-  pagerSize: 8 # 每页展示的文章数量，这个没找到文档，应该是主题自己设置的
+  pagerSize: 5 # 每页展示的文章数量，这个没找到文档，应该是主题自己设置的
 
 params:
   # env: production # to enable google analytics, opengraph, twitter-cards and schema.
