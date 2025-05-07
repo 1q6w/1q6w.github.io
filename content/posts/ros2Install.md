@@ -41,3 +41,7 @@ ros2 run turtlesim turtle_teleop_key
 ~~~
 
 
+- 不采用docker也可以通过鱼香ROS的一键安装命令
+~~~bash
+wget http://fishros.com/install -O fishros && . fishros
+~~~
