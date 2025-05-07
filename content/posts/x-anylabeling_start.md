@@ -4,6 +4,7 @@ draft = false
 title = 'X Anylabeling start'
 categories = ["计算机视觉"]
 tags = ["X-Anylabeling 自动标注"]
+
 +++
 
 **1. 安装**

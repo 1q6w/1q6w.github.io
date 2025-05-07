@@ -2,6 +2,8 @@
 date = '2025-05-07T01:23:07+08:00'
 draft = true
 title = 'Cuda_1'
+categories = ["cuda编程"]
+tags = ["cuda"]
 +++
 # cuda
 

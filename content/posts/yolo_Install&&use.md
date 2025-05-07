@@ -3,7 +3,7 @@ date = '2025-04-29T16:34:29+08:00'
 draft = false
 title = 'yolo deploy'
 categories = ["计算机视觉"]
-tags = ["YOLO docker 部署"]
+tags = ["YOLO docker 部署与训练"]
 +++
 # 使用 Docker 容器训练YOLO部署到MaixCam
 
@@ -214,8 +214,10 @@ tags = ["YOLO docker 部署"]
 
   ~~~bash
   cd /workspace/weights/
+  # 注意若tpu转换模型失败，将simplify参数改为False
   yolo export model=best.pt format=onnx imgsz=640,640 dynamic=False opset=17 simplify=True name=yolov11n
   ~~~
+
 
 - ****
 
@@ -332,7 +334,7 @@ tags = ["YOLO docker 部署"]
 - **执行转换脚本**
 
   ~~~bash
-  chmod +x convert_yolov11_to_cvimodel.sh && ./convert_yolov11_to_cvimodel.sh
+  chmod +x convert_yolo11_to_cvimodel.sh && ./convert_yolo11_to_cvimodel.sh
   ~~~
 
   执行完后可以在`workspace`文件夹下看到有`**_int8.cvimodel` 文件
