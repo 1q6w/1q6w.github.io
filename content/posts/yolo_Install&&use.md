@@ -362,9 +362,3 @@ tags = ["YOLO docker 部署与训练"]
   对于YOLO11直接调用`MaixPy`或者`MaixCDK`对应的代码加载
 
   
-
-  
-
-  
-
-  
