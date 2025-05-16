@@ -39,18 +39,24 @@ tags = ["stm32 docker arm-gcc工具链"]
        libswt-gtk-4-java \
        && rm -rf /var/lib/apt/lists/*
    
+   
    # 安装ARM GCC工具链
-   RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 \
-       && tar -xjf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /opt \
-       && rm gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+   COPY gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 /tmp/
+   RUN tar -xjf /tmp/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /opt \
+       && rm /tmp/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
    ENV PATH="/opt/gcc-arm-none-eabi-10.3-2021.10/bin:${PATH}"
    
-   # 安装STM32CubeMX（使用本地文件）
+   
+   # 确保先安装unzip
+   RUN apt-get update && apt-get install -y unzip
+   
+   
+   # 部署CubeMX
    COPY en.stm32cubemx-lin-v6-14-1.zip /tmp/
-   RUN unzip /tmp/en.stm32cubemx-lin-v6-14-1.zip -d /opt \
-       && chmod +x /opt/STM32CubeMX/STM32CubeMX \
-       && ln -s /opt/STM32CubeMX/STM32CubeMX /usr/local/bin/STM32CubeMX \
-       && rm /tmp/en.stm32cubemx-lin-v6-14-1.zip
+   RUN unzip /tmp/en.stm32cubemx-lin-v6-14-1.zip -d /opt && \
+       mkdir -p /opt/STM32CubeMX && \
+       # 清理
+       rm /tmp/en.stm32cubemx-lin-v6-14-1.zip
    
    # 安装J-Link软件包（包含Ozone）
    RUN wget https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb \
@@ -83,6 +89,22 @@ tags = ["stm32 docker arm-gcc工具链"]
        --device /dev/bus/usb \
        --privileged \
        stm32-dev-env
+       
+       
+       docker run -it --rm \
+       -v /home/x/Stm32/projects:/workspace \
+       -v /tmp/.X11-unix:/tmp/.X11-unix \
+       -e DISPLAY=$DISPLAY \
+       --device /dev/bus/usb \
+       --privileged \
+       stm32-dev-env
+   ~~~
+
+5. 在`/opt`目录下安装cubemx
+
+   ~~~bash
+   cd /opt
+   ./StartSTm32CubeMX /opt/STM32CubeMX
    ~~~
 
    
